@@ -88,7 +88,7 @@ public:
     }
 };
 
-int main(){
+int main() {
     Queues q;
     char ch;
 
@@ -104,7 +104,8 @@ int main(){
             cout << endl;
 
             switch (ch) {
-            case '1':{
+            case '1': {
+
                 q.insert();
                 break;
             }
@@ -118,6 +119,11 @@ int main(){
             }
             case '4': {
                 return 0;
+            }
+            default: {
+                cout << "Invalid option!!" << endl;
+                break;
+            }
             }
         }
     }
