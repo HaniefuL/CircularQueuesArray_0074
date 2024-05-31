@@ -2,8 +2,8 @@
 using namespace std;
 
 class Queues {
-	int FRONT, REAR, max = 5;
-	int queue_array[5];
+    int FRONT, REAR, max = 5;
+    int queue_array[5];
 
 public:
     Queues() {
@@ -21,6 +21,7 @@ public:
             cout << "\nQueue overflow\n";
             return;
         }
+
         if (FRONT == -1) {
             FRONT = 0;
             REAR = 0;
@@ -32,10 +33,31 @@ public:
                 REAR = REAR + 1;
         }
         queue_array[REAR] = num;
-}
+    }
 
     void remove() {
         if (FRONT == -1) {
             cout << "Queue underflow\n";
+            return;
+        }
+        cout << "\nThe element deleted from the queue is : " << queue_array[FRONT] << "\n";
+
+        if (FRONT == REAR) {
+            FRONT = -1;
+            REAR = -1;
+        }
+        else {
+            if (FRONT == max - 1)
+                FRONT = 0;
+            else FRONT = FRONT + 1;
+        }
+    }
+
+    void display() {
+        int FRONT_position = FRONT;
+        int REAR_position = REAR;
+
+        if (FRONT == -1) {
+            cout << "Queue is empty\n";
             return;
         }
